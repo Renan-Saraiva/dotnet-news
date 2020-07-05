@@ -13,10 +13,10 @@ namespace positional_patterns
             Pessoa pessoa3 = new Pessoa { Idade = 18, Sexo = Sexo.Feminino };
             Pessoa pessoa4 = new Pessoa { Idade = 15, Sexo = Sexo.Feminino };
 
-            Console.WriteLine(GetAlistamentoMSG(pessoa));
-            Console.WriteLine(GetAlistamentoMSG(pessoa2));
-            Console.WriteLine(GetAlistamentoMSG(pessoa3));
-            Console.WriteLine(GetAlistamentoMSG(pessoa4));
+            Console.WriteLine(VerificaAlistamento(pessoa));
+            Console.WriteLine(VerificaAlistamento(pessoa2));
+            Console.WriteLine(VerificaAlistamento(pessoa3));
+            Console.WriteLine(VerificaAlistamento(pessoa4));
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace positional_patterns
         /// </summary>
         /// <param name="pessoa"></param>
         /// <returns></returns>
-        static string GetAlistamentoMSG(Pessoa pessoa) => pessoa switch
+        static string VerificaAlistamento(Pessoa pessoa) => pessoa switch
         {
             var (idade, _) when idade < 18 => "Ainda não pode se alistar",
             var (idade, sexo) when idade >= 18 && sexo == Sexo.Masculino => "Precisa se alistar",
